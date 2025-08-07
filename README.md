@@ -101,3 +101,6 @@ Rewards are defined per zone in `config.lua`. When the timer finishes, a server-
     * `style.css`: CSS สำหรับการจัดสไตล์และแอนิเมชันของ UI
     * `script.js`: ตรรกะฝั่งฟรอนต์เอนด์สำหรับการแสดง/ซ่อนองค์ประกอบ UI, การอัปเดตตัวจับเวลา และการจัดการข้อความจากสคริปต์ Lua
     * `img/`: มีรูปภาพสำหรับไอเท็มที่แสดงใน UI
+
+## วิดีโอ / Video
+https://youtu.be/KyAEzVEP40o?si=tZeMIHiRwOT8AkCd
