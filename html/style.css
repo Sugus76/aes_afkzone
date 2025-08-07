@@ -1,0 +1,240 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: "Playpen Sans Thai", cursive;
+  background-color: transparent;
+  color: #ffc933;
+  user-select: none;
+}
+
+.afk-container {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(to bottom, rgba(15,15,15,0.95), rgba(30,30,30,0.95));
+  padding: 10px 14px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.75);
+  text-align: center;
+  min-width: 140px;
+  max-width: 160px;
+  z-index: 9999;
+}
+
+.afk-title {
+  font-size: 22px;
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: #ffc933;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.7), 1px 1px 1px #000;
+  text-transform: uppercase;
+}
+
+.afk-items {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  height: 73px;
+  border: 1px solid #ffc933;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.03);
+  margin-bottom: 10px;
+  padding: 4px 0;
+}
+
+.afk-items-wrapper {
+  display: flex;
+  gap: 8px;
+  width: max-content;
+}
+
+.afk-items-wrapper.scroll {
+  animation: scroll-loop 20s linear infinite;
+}
+
+.afk-items-wrapper img {
+  flex-shrink: 0;
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  border-radius: 3px;
+  border: 1px solid #ffc93322;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.afk-items img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  border-radius: 3px;
+  border: 1px solid #ffc93322;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.cooldown-text {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffcc33;
+  text-shadow: 1px 1px 1px #000;
+  margin-bottom: 1px;
+}
+
+.cooldown-timer {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 1px 1px 1px #000;
+}
+
+.afk-footer {
+  margin-top: 10px;
+  background: rgba(25,25,25,0.95);
+  color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  line-height: 1.3;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.75);
+  text-shadow: 0 0 1px #000;
+}
+
+
+.key {
+  font-weight: bold;
+  color: #ffcc00;
+  background: #333;
+  padding: 0 4px;
+  border-radius: 3px;
+  font-size: 11px;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(150%) translateY(-50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%) translateY(-50%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0%) translateY(-50%);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(150%) translateY(-50%);
+    opacity: 0;
+  }
+}
+
+
+.slide-in {
+  animation: slideInLeft 0.5s ease-out forwards;
+}
+
+.slide-out {
+  animation: slideOutRight 0.5s ease-in forwards;
+}
+
+
+.press-key-box {
+  position: fixed;
+  bottom: 100px;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  opacity: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: #1a1a1a;
+  box-shadow: 0 0 8px rgba(0,0,0,0.75);
+  border-radius: 8px;
+  color: #fff4b0;
+  font-size: 14px;
+  z-index: 999;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+
+.press-key-box.visible {
+  transform: translate(-50%, 0); 
+  opacity: 1;
+}
+
+
+.press-key-box.hide {
+  transform: translate(-50%, 500%);
+  opacity: 0;
+}
+
+.key-button {
+  background: #1a1a1a;
+  color: #ffcc00;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 15px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.75);
+  min-width: 28px;
+  text-align: center;
+}
+
+@keyframes scroll-loop {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.afk-toast-container {
+  position: fixed;
+  bottom: 170px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 10px;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.afk-toast {
+  background: rgba(30, 30, 30, 0.95);
+  color: #ffcc00;
+  padding: 10px 18px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00000099;
+  opacity: 1;
+  z-index: 9999;
+  transition: opacity 1s ease, transform 0.3s ease;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.afk-toast.fadeout {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  75% { opacity: 1; }
+  100% { opacity: 0; }
+}
