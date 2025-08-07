@@ -1,7 +1,3 @@
-Here's a full README for the `aes_afkzone` resource, provided in both English and Thai.
-
-***
-
 # aes_afkzone
 
 This RedM resource, `aes_afkzone`, allows server administrators to create designated "AFK Zones" where players can go idle to receive rewards. The script features a custom UI, invincibility for AFK players, automated blips, and Discord webhook logging.
